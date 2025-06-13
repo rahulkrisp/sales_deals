@@ -18,8 +18,8 @@ from datetime import datetime, timedelta, date, time
 load_dotenv()  # Load variables from .env file
 
 # In[17]:
-api_key = os.getenv("MIXPANEL_API_KEY")
-project_id = os.getenv("MIXPANEL_PROJECT_ID")
+api_key = st.secrets["MIXPANEL_API_KEY"]
+project_id = st.secrets["MIXPANEL_PROJECT_ID"]
 
 st.title("Mixpanel Deal Summary Dashboard")
 start_date = st.date_input("Start Date", datetime.now() - timedelta(days=7))
