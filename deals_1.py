@@ -39,7 +39,7 @@ events_to_export = ["Deal Won"]
 event_array_json = json.dumps(events_to_export)
 
 url = (
-    f"https://data-eu.mixpanel.com/api/2.0/export?project_id={project_id}&from_date=2025-01-01&to_date={date.today().strftime('%Y-%m-%d')}&event="
+    f"https://data-eu.mixpanel.com/api/2.0/export?project_id={project_id}&from_date={start_date}&to_date={date.today().strftime('%Y-%m-%d')}&event="
     + event_array_json
 )
 
@@ -80,13 +80,13 @@ events_to_export = ["New Payment Made"]
 event_array_json = json.dumps(events_to_export)
 
 url = (
-   f"https://data-eu.mixpanel.com/api/2.0/export?project_id={project_id}&from_date=2025-01-01&to_date={date.today().strftime('%Y-%m-%d')}&event="
+   f"https://data-eu.mixpanel.com/api/2.0/export?project_id={project_id}&from_date={start_date}&to_date={date.today().strftime('%Y-%m-%d')}&event="
     + event_array_json
 )
 
 headers = {
     "accept": "text/plain",
-    "authorization": "Basic {api_key}",
+    "authorization": f"Basic {api_key}",
 }
 
 response = requests.get(url, headers=headers)
