@@ -249,12 +249,12 @@ summary = {
     'Total Deals Won From Already Converted Users' : len(filtered_converted_deals),
     'Total Payment From Already Converted Users' : payment_converted_deals['Amount'].astype(float).sum(),
     'Total Deals Won From New Deals' : len(filtered_new_deals),
-    'Total Payment From New Deals' : payment_new_deals['Amount'].astype(float).sum(),
-        '-------------------------------------------------------' : '------------',
-    'Total Deals Won From Already Converted Users (Yesterday)' : len(filtered_converted_deals_yesterday),
-    'Total Payment From Already Converted Users (Yesterday)' : payment_converted_deals_yesterday['Amount'].astype(float).sum(),
-    'Total Deals Won From New Deals (Yesterday)' : len(filtered_new_deals_yesterday),
-    'Total Payment From New Deals (Yesterday)' : payment_new_deals_yesterday['Amount'].astype(float).sum()
+    'Total Payment From New Deals' : payment_new_deals['Amount'].astype(float).sum()
+    #     '-------------------------------------------------------' : '------------',
+    # 'Total Deals Won From Already Converted Users (Yesterday)' : len(filtered_converted_deals_yesterday),
+    # 'Total Payment From Already Converted Users (Yesterday)' : payment_converted_deals_yesterday['Amount'].astype(float).sum(),
+    # 'Total Deals Won From New Deals (Yesterday)' : len(filtered_new_deals_yesterday),
+    # 'Total Payment From New Deals (Yesterday)' : payment_new_deals_yesterday['Amount'].astype(float).sum()
 }
 
 summary_df = pd.DataFrame(list(summary.items()), columns=['Metric', 'Value'])
@@ -281,17 +281,17 @@ with st.expander("🔍 Payment From New Deals"):
 with st.expander("🔍 Deals Won From New Deals"):
     st.dataframe(filtered_new_deals)
 
-with st.expander("🕒 Payment From Already Converted Users Yesterday"):
-    st.dataframe(payment_converted_deals_yesterday)
+# with st.expander("🕒 Payment From Already Converted Users Yesterday"):
+#     st.dataframe(payment_converted_deals_yesterday)
 
-with st.expander("🕒 Deals Won From Already Converted Users Yesterday"):
-    st.dataframe(filtered_converted_deals_yesterday)
+# with st.expander("🕒 Deals Won From Already Converted Users Yesterday"):
+#     st.dataframe(filtered_converted_deals_yesterday)
 
-with st.expander("🕒 Payment From New Deals Yesterday"):
-    st.dataframe(payment_new_deals_yesterday)
+# with st.expander("🕒 Payment From New Deals Yesterday"):
+#     st.dataframe(payment_new_deals_yesterday)
 
-with st.expander("🕒 Deals Won From New Deals Yesterday"):
-    st.dataframe(filtered_new_deals_yesterday)
+# with st.expander("🕒 Deals Won From New Deals Yesterday"):
+#     st.dataframe(filtered_new_deals_yesterday)
 
 
 
