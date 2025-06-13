@@ -5,7 +5,6 @@
 
 
 import pandas as pd
-from dotenv import load_dotenv
 import pytz
 import requests
 import gzip
@@ -15,7 +14,6 @@ from io import BytesIO
 import streamlit as st
 from datetime import datetime, timedelta, date, time
 
-load_dotenv()  # Load variables from .env file
 
 # In[17]:
 api_key = st.secrets["MIXPANEL_API_KEY"]
